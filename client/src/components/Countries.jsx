@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import CountryCard from './CountryCard';
 import { showCountries, unmountCountries } from '../actions';
 
+import './styles/Countries.css'
 
 function Countries() {
     const dispatch = useDispatch();
@@ -16,11 +17,11 @@ function Countries() {
     }, [ dispatch ])
 
     return (
-        <div>
+        <section className='Container'>
             {
                 countries && countries.map(country => <CountryCard key={country.id} country={country}/>)
             }
-        </div>
+        </section>
     )
 }
 
